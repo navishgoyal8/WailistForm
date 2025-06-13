@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.gradient-bg {
+    background-color: hsl(var(--background));
+    background-image: radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 0.1) 0px, transparent 50%),
+                      radial-gradient(at 97% 21%, hsla(145, 96%, 42%, 0.1) 0px, transparent 50%),
+                      radial-gradient(at 75% 88%, hsla(240, 96%, 62%, 0.1) 0px, transparent 50%);
+}
+
+@layer base {
+  :root {
+    --background: 220 29% 14%; /* #1A202C */
+    --foreground: 215 14% 84%; /* #D1D5DB (slate-300) */
+
+    --card: 222 39% 18%; /* #1E293B (slate-800) */
+    --card-foreground: 215 14% 84%; /* #D1D5DB (slate-300) */
+
+    --popover: 222 47% 11%; /* #0F172A */
+    --popover-foreground: 215 14% 84%;
+
+    --primary: 207 70% 57%; /* #4299E1 (medium blue) */
+    --primary-foreground: 210 40% 98%; /* near white for text on primary */
+
+    --secondary: 220 26% 25%; /* #334155 (slate-700) */
+    --secondary-foreground: 215 14% 84%;
+
+    --muted: 220 26% 25%; /* #334155 (slate-700) */
+    --muted-foreground: 215 20% 65%; /* #94A3B8 (slate-400) */
+
+    --accent: 175 73% 57%; /* #42E1D1 (saturated cyan) */
+    --accent-foreground: 222 47% 11%; /* dark text for on accent */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 26% 25%; /* #334155 (slate-700) */
+    --input: 220 26% 25%; /* #334155 (slate-700) for input background */
+    --ring: 207 70% 57%; /* primary blue for focus rings */
+
+    --chart-1: 207 70% 57%;
+    --chart-2: 175 73% 57%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    
+    --radius: 0.5rem;
+
+    /* Sidebar specific, can keep defaults or adjust if sidebar is used later */
+    --sidebar-background: 222 47% 9%; /* Slightly darker than main bg */
+    --sidebar-foreground: 215 14% 84%;
+    --sidebar-primary: 207 70% 57%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 222 39% 18%;
+    --sidebar-accent-foreground: 215 14% 84%;
+    --sidebar-border: 220 26% 20%;
+    --sidebar-ring: 207 70% 57%;
+  }
+
+  /* Explicitly set dark theme variables as the base, as this is a dark theme app */
+  .dark {
+    --background: 220 29% 14%; /* #1A202C */
+    --foreground: 215 14% 84%;
+    --card: 222 39% 18%;
+    --card-foreground: 215 14% 84%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 215 14% 84%;
+    --primary: 207 70% 57%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 220 26% 25%;
+    --secondary-foreground: 215 14% 84%;
+    --muted: 220 26% 25%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 175 73% 57%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 26% 25%;
+    --input: 220 26% 25%;
+    --ring: 207 70% 57%;
+    --chart-1: 207 70% 57%;
+    --chart-2: 175 73% 57%;
+    --sidebar-background: 222 47% 9%;
+    --sidebar-foreground: 215 14% 84%;
+    --sidebar-primary: 207 70% 57%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 222 39% 18%;
+    --sidebar-accent-foreground: 215 14% 84%;
+    --sidebar-border: 220 26% 20%;
+    --sidebar-ring: 207 70% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
