@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 export const metadata: Metadata = {
   title: 'Invesho - Your AI Fundraising Co-pilot',
   description: 'Stop Guessing. Start Fundraising Intelligently. Invesho is your AI co-pilot for the entire fundraising journey.',
+  icons: {
+    icon: '/favicon.ico',
+  }
 };
 
 export default function RootLayout({
