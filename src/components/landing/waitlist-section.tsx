@@ -8,7 +8,7 @@ export function WaitlistSection() {
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white font-headline">Get Early Access to Invesho</h2>
             <p className="mt-4 text-slate-400 text-lg">
-              Join the waitlist to be the first to know when we launch and lock in a special launch-day offer.
+              Join the waitlist to get the access to the product.
             </p>
           </div>
           <WaitlistForm />

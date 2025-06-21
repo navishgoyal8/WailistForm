@@ -12,7 +12,7 @@ async function addToGoogleSheet(data: WaitlistFormData) {
 
   if (!GOOGLE_SHEET_ID || !GOOGLE_SERVICE_ACCOUNT_EMAIL || !GOOGLE_PRIVATE_KEY) {
     console.warn('Google Sheets environment variables not set. Skipping sheet update.');
-    return { success: false, message: "Google Sheets credentials not configured on the server." };
+    return { success: false, message: "Google Sheets credentials not configured on the server." ,waitlistPosition:null};
   }
 
   try {
@@ -26,6 +26,13 @@ async function addToGoogleSheet(data: WaitlistFormData) {
     await doc.loadInfo(); // loads document properties and worksheets
 
     const sheet = doc.sheetsByIndex[0]; // Assumes you want to use the first sheet
+    const rows = await sheet.getRows(); // Load existing rows to check for headers
+    const waitistPosition = rows.length + 1; // Position is the number of existing rows + 1
+
+    if(rows.length === 0 && sheet.headerValues.length === 0){
+      console.log('Sheet is empty, setting headers for the first time.');
+      await sheet.setHeaderRow(['Timestamp', 'Name', 'Email', 'Startup Name', 'Startup Stage']);
+    }
 
     const expectedHeaders = ['Timestamp', 'Name', 'Email', 'Startup Name', 'Startup Stage'];
 
@@ -63,7 +70,7 @@ async function addToGoogleSheet(data: WaitlistFormData) {
       'Startup Stage': data.startupStage,
     });
     console.log('Data added to Google Sheet:', data);
-    return { success: true, message: "Successfully added to Google Sheet." };
+    return { success: true, message: "Successfully added to Google Sheet.",waitlistPosition: waitistPosition };
   } catch (error) {
     console.error('Error adding to Google Sheet:', error);
     let errorMessage = 'Could not save to Google Sheet.';
@@ -74,7 +81,7 @@ async function addToGoogleSheet(data: WaitlistFormData) {
     if (typeof errorMessage === 'string' && errorMessage.includes('Header values are not yet loaded')) {
       errorMessage = 'Failed to process sheet headers. Please ensure the sheet is accessible and try again. Error: Header values are not yet loaded.';
     }
-    return { success: false, message: errorMessage };
+    return { success: false, message: errorMessage, waitlistPosition: null };
   }
 }
 
@@ -146,7 +153,7 @@ export async function POST(request: NextRequest) {
     await new Promise(resolve => setTimeout(resolve, 1000));
 
     if (sheetResult.success) {
-      return NextResponse.json({ message: 'Successfully joined the waitlist and data saved to sheet!' }, { status: 200 });
+      return NextResponse.json({ message: 'Successfully joined the waitlist and data saved to sheet!',waitlistPosition:sheetResult.waitlistPosition }, { status: 200 });
     } else {
       // If saving to sheet failed, still inform the user they joined the waitlist
       // but log the sheet issue.

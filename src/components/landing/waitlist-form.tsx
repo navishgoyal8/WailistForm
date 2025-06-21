@@ -37,11 +37,13 @@ export function WaitlistForm() {
         },
         body: JSON.stringify(data),
       });
+      const result = await response.json()
 
       if (response.ok) {
+        const position = result.waitlistPosition;
         toast({
           title: "Success!",
-          description: "You've been added to the waitlist. We'll be in touch.",
+          description: `You are #${position} on the waitlist!.`,
           variant: "default",
         });
         form.reset();
