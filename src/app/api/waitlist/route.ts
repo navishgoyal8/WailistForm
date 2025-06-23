@@ -4,6 +4,7 @@ import { waitlistSchema, type WaitlistFormData } from '@/lib/types';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { JWT } from 'google-auth-library';
 import nodemailer from 'nodemailer';
+import { start } from 'repl';
 
 
 // Helper function to add data to Google Sheets
@@ -27,7 +28,8 @@ async function addToGoogleSheet(data: WaitlistFormData) {
 
     const sheet = doc.sheetsByIndex[0]; // Assumes you want to use the first sheet
     const rows = await sheet.getRows(); // Load existing rows to check for headers
-    const waitistPosition = rows.length + 1; // Position is the number of existing rows + 1
+    const startingNumber = 4000;
+    let waitlistPosition = startingNumber+rows.length;
 
     if(rows.length === 0 && sheet.headerValues.length === 0){
       console.log('Sheet is empty, setting headers for the first time.');
@@ -70,7 +72,7 @@ async function addToGoogleSheet(data: WaitlistFormData) {
       'Startup Stage': data.startupStage,
     });
     console.log('Data added to Google Sheet:', data);
-    return { success: true, message: "Successfully added to Google Sheet.",waitlistPosition: waitistPosition };
+    return { success: true, message: "Successfully added to Google Sheet.",waitlistPosition: waitlistPosition };
   } catch (error) {
     console.error('Error adding to Google Sheet:', error);
     let errorMessage = 'Could not save to Google Sheet.';
