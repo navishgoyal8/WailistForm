@@ -1,4 +1,5 @@
 
+
 import { NextResponse, type NextRequest } from 'next/server';
 import { waitlistSchema, type WaitlistFormData } from '@/lib/types';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
@@ -173,5 +174,3 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: errorMessage }, { status: 500 });
   }
 }
-
-
