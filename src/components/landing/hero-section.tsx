@@ -6,7 +6,7 @@ export function HeroSection() {
     <section className="pt-32 pb-20 sm:pt-48 sm:pb-28">
       <div className="container mx-auto px-6 text-center">
         <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight font-headline">
-          Stop Guessing. <br className="hidden md:block" /> Start <span className="text-primary">Fundraising</span> Intelligently.
+          Automate<br className="hidden md:block" /> Your <span className="text-primary">Fundraising</span> Entirely.
         </h1>
         <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-slate-400">
           Invesho is your AI co-pilot for the entire fundraising journey. Find the right investors, craft the perfect pitch, and close your round faster.
