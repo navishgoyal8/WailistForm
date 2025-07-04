@@ -1,5 +1,5 @@
 export const resourcesData = {
-    accelerators: [
+  accelerators: [
         {"id":"1","name":"1517 Medici Project","grantAmount":"$1,000","appliesTo":"Individuals","institution":"1517 Fund","targetNotes":"High school, college students, and dropouts to launch projects to make humanity better.","type":"grant","status":"rolling","link":"https://www.1517fund.com"},
         {"id":"2","name":"776 Fellowship","grantAmount":"$100,000","appliesTo":"Individuals","institution":"776 Foundation","targetNotes":"Young people tackling climate change.","type":"grant","status":"open","link":"https://www.776.org/"},
         {"id":"3","name":"Activate Fellowship","grantAmount":"$275K","appliesTo":"Individuals","institution":"Activate Global Inc.","targetNotes":"We empower scientists to reinvent the world.","type":"grant","status":"open","link":"https://www.activate.org/the-fellowship"},
@@ -65,12 +65,39 @@ export const resourcesData = {
         {"id":"63","name":"TENN Master Accelerator Program","grantAmount":"Varies","appliesTo":"Companies","institution":"Launch Tennessee","targetNotes":"For Tennessee-based startups.","type":"accelerator","status":"open","link":"http://www.launchtn.org/thetenn"},
         {"id":"64","name":"Stex25","grantAmount":"Varies","appliesTo":"Companies","institution":"MIT Startup Exchange","targetNotes":"Connects startups with MIT's ecosystem.","type":"accelerator","status":"open","link":"http://www.startupexchange.mit.edu"},
         {"id":"65","name":"Starveups","grantAmount":"Varies","appliesTo":"Companies","institution":"Starveups","targetNotes":"Mentorship-driven program in Portland.","type":"accelerator","status":"open","link":"http://www.starveups.com"}
-    ],
-    
-    // Inside your resourcesData object, replace the entire legalDocs array with this
-// Inside your resourcesData object, replace the legalDocs array with this:
+  ],
 
-legalDocs: [
+  pitchDecks: [
+    { 
+        id: 'pd-1', 
+        name: 'Airbnb Pitch Deck', 
+        source: 'Seed Round', 
+        description: 'The legendary deck that started it all. A masterclass in simplicity and defining a new market category in a clear, visual way.', 
+        link: '/pitch-decks/Airbnb.pdf' 
+    },
+    { 
+        id: 'pd-2', 
+        name: 'Uber Pitch Deck', 
+        source: 'Seed Round (2008)', 
+        description: 'A fantastic example of a deck that is direct, problem-focused, and outlines a bold vision for the future of transportation.', 
+        link: '/pitch-decks/uber-pitch-deck.pdf' 
+    },
+    { 
+        id: 'pd-3', 
+        name: 'Mixpanel Pitch Deck', 
+        source: 'Seed Round', 
+        description: 'A masterclass in defining a target market and showcasing deep customer understanding. A must-see for B2B startups.',
+        link: '/pitch-decks/mixpanel.pdf' 
+    },
+    { 
+        id: 'pd-4', 
+        name: 'Sequoia Capital Template', 
+        source: 'VC Template', 
+        description: 'The official, no-nonsense template from a legendary VC firm. It focuses on the essential elements they look for in a business plan.', 
+        link: '/pitch-decks/SequoitaCapital.pdf'
+    }
+],
+  legalDocs: [
     { 
         id: 'nda', 
         name: 'Mutual NDA Template', 
@@ -117,39 +144,27 @@ legalDocs: [
         link: '/documents/Independent Contractor Agreement.pdf'
     }
 ],
-// Inside your resourcesData object, replace the entire pitchDecks array with this:
+  testimonials: [
+        {
+            authorName: 'Solomon Paulmaah',
+            authorHandle: '@solomonpaaulmaah',
+            authorAvatarUrl: 'https://pbs.twimg.com/profile_images/1938145921709056000/V9CghCVs_400x400.jpg',
+            testimonialText: 'this is huge. fundraising is often the biggest distraction from actually building the product for founders and creators alike',
+            sourceUrl: 'https://x.com/InveshoAI/status/1937538600704561556?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1938860490916315629%7Ctwgr%5Ed6c004e4a901c5783c8ab5f4e45a772f3dd626f8%7Ctwcon%5Es2_&ref_url=https%3A%2F%2Fwww.notion.so%2FWhat-people-are-saying-2220ddf620ba80a99505dcf58302838d', // Always link to the original source for authenticity
+            sourceType: 'X'
+        },
+        {
+            authorName: 'Dolapo Obat',
+            authorHandle: '@DolapoObat',
+            authorAvatarUrl: 'https://pbs.twimg.com/profile_images/1928497297958072320/ByKBUAlD_400x400.jpg',
+            testimonialText: 'Fundraising doesn’t have to feel like a maze, good platforms make all the difference',
+            sourceUrl: 'https://x.com/dolapoobat/status/1940009677665759393?s=46&t=ba_K1Il5PnlHlfHXDVeWGQ',
+            sourceType: 'X'
+        },
+     ],
 
-pitchDecks: [
-    { 
-        id: 'pd-1', 
-        name: 'Airbnb Pitch Deck', 
-        source: 'Seed Round', 
-        description: 'The legendary deck that started it all. A masterclass in simplicity and defining a new market category in a clear, visual way.', 
-        link: '/pitch-decks/Airbnb.pdf' 
-    },
-    { 
-        id: 'pd-2', 
-        name: 'Uber Pitch Deck', 
-        source: 'Seed Round (2008)', 
-        description: 'A fantastic example of a deck that is direct, problem-focused, and outlines a bold vision for the future of transportation.', 
-        link: '/pitch-decks/uber-pitch-deck.pdf' 
-    },
-    { 
-        id: 'pd-3', 
-        name: 'Mixpanel Pitch Deck', 
-        source: 'Seed Round', 
-        description: 'A masterclass in defining a target market and showcasing deep customer understanding. A must-see for B2B startups.',
-        link: '/pitch-decks/mixpanel.pdf' 
-    },
-    { 
-        id: 'pd-4', 
-        name: 'Sequoia Capital Template', 
-        source: 'VC Template', 
-        description: 'The official, no-nonsense template from a legendary VC firm. It focuses on the essential elements they look for in a business plan.', 
-        link: '/pitch-decks/SequoitaCapital.pdf'
-    }
-],
-  "investorDb": [
+
+investorDb: [
     {
       "name": "Techstars",
       "website": "http://www.techstars.com/",
@@ -1681,5 +1696,5 @@ pitchDecks: [
       "type": "Accelerator/Incubator",
       "location": "San Juan Capistrano, CA"
     }
-  ]
+  ],
 };

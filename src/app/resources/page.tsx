@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Icon from '@/components/resources/Icon';
+import { Button } from '@/components/ui/button';
 
 export default function ResourcesHubPage() {
     const hubItems = [
@@ -29,6 +30,13 @@ export default function ResourcesHubPage() {
                         <p className="text-slate-400 text-sm flex-grow">{item.description}</p>
                     </Link>
                 ))}
+            </div>
+            <div className="mt-16 text-center">
+                <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-20 rounded-lg text-lg transition-transform hover:scale-105">
+                    <Link href="/#waitlist">
+                        Join the Waitlist
+                    </Link>
+                </Button>
             </div>
         </div>
     );
