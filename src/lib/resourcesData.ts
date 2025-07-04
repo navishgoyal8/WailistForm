@@ -161,6 +161,14 @@ export const resourcesData = {
             sourceUrl: 'https://x.com/dolapoobat/status/1940009677665759393?s=46&t=ba_K1Il5PnlHlfHXDVeWGQ',
             sourceType: 'X'
         },
+        {
+            authorName: 'David Yunghans',
+            authorHandle: 'David Yunghans',
+            authorAvatarUrl: 'https://media.licdn.com/dms/image/v2/D4E03AQHSsh3min7i2g/profile-displayphoto-shrink_800_800/B4EZZrURBiHYAg-/0/1745557198355?e=1756944000&v=beta&t=9wE52_g4KOHVIdBOJX0J4wGSMpFJUDBJeV0FU87PTT4',
+            testimonialText: 'This will be such a helpful tool for so many founders around the world, love the company!',
+            sourceUrl: 'https://www.linkedin.com/feed/update/urn:li:activity:7346665278748925954?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7346665278748925954%2C7346805033612492800%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287346805033612492800%2Curn%3Ali%3Aactivity%3A7346665278748925954%29',
+            sourceType: 'LinkedIn'
+        },
      ],
 
 

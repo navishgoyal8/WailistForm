@@ -32,6 +32,10 @@ export default function ResourcesHubPage() {
                 ))}
             </div>
             <div className="mt-16 text-center">
+                {/* --- NEW TEXT ADDED HERE --- */}
+                <p className="text-lg text-slate-300 mb-6 max-w-xl mx-auto">
+                    Automate Your Fundraising Entirely With Us.
+                </p>
                 <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-20 rounded-lg text-lg transition-transform hover:scale-105">
                     <Link href="/#waitlist">
                         Join the Waitlist

@@ -5,7 +5,7 @@ import { TeamSection } from './TeamSection'; // <-- 1. Import the new component
 
 export function HeroSection() {
   return (
-    <section className="pt-32 pb-20 sm:pt-48 sm:pb-28">
+    <section className="pt-32 pb-20 sm:pt-40 sm:pb-28">
       <div className="container mx-auto px-6 text-center">
         <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight font-headline mb-12">
           Automate<br className="hidden md:block" /> Your <span className="text-primary">Fundraising</span> Entirely.
